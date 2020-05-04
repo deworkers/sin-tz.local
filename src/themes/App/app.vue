@@ -41,9 +41,6 @@
             </div>
         </div>
         <div class="level-two" v-bind:class="[level == 1 ? 'level-two--open':'', level == 2 ? 'level-two--hidden':'']">
-            <div class="level-two-left">
-
-            </div>
             <div class="level-two-right">
                 <div class="level-two-panel">
                     <div class="content">
@@ -60,9 +57,6 @@
             </div>
         </div>
         <div class="level-three" v-bind:class="[level == 2 ? 'level-three--open':'']">
-            <div class="level-two-left">
-
-            </div>
             <div class="level-two-right">
                 <div class="level-two-panel">
                     <div class="content">

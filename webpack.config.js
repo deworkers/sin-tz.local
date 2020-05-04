@@ -25,17 +25,24 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'less-loader'
-                    }
-                ]
+                loader: ExtractTextPlugin.extract({
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+	                            importLoaders: 1,
+	                            sourceMap: true
+	                        }
+                        },
+                        {
+                            loader: 'less-loader',
+	                        options: {
+	                            sourceMap: true
+	                        }
+                        }
+                    ],
+                    fallback: ["style-loader"]
+                })
             },
             {
                 test: /\.vue$/,
@@ -51,5 +58,6 @@ module.exports = {
         alias: {
             'vue$': 'vue/dist/vue.esm.js'
         }
-    }
+    },
+    devtool: 'source-map'
 };
