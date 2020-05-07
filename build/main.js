@@ -756,7 +756,7 @@ var render = function() {
           class: [
             _vm.leftOpen ? "level-one-left--openLeft" : "",
             _vm.rightOpen ? "level-one-left--openRight" : "",
-            _vm.level == 2 ? "level-one--hidden" : ""
+            _vm.level >= 1 ? "level-one--hidden" : ""
           ]
         },
         [
@@ -788,7 +788,7 @@ var render = function() {
           class: [
             _vm.rightOpen ? "level-one-right--openRight" : "",
             _vm.leftOpen ? "level-one-right--openLeft" : "",
-            _vm.level == 2 ? "level-one--hidden" : ""
+            _vm.level >= 1 ? "level-one--hidden" : ""
           ]
         },
         [
@@ -826,7 +826,7 @@ var render = function() {
       [
         _c("div", {
           staticClass: "level-two-left",
-          staticStyle: { background: "url(/pics/level-1.jpg)" }
+          staticStyle: { background: "url(/pics/level-1.jpg) 100% 0%" }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "level-two-right" }, [

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="level-one">
-            <div class="level-one-left" v-bind:class="[leftOpen ? 'level-one-left--openLeft':'', rightOpen ? 'level-one-left--openRight':'',  level == 2 ? 'level-one--hidden':'']">
+            <div class="level-one-left" v-bind:class="[leftOpen ? 'level-one-left--openLeft':'', rightOpen ? 'level-one-left--openRight':'',  level >= 1 ? 'level-one--hidden':'']">
                 <div class="level-one-panel">
                     <div class="level-one__logo level-one__logo--tmk">
                         <img src="/pics/logo-tmk.png">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="level-one-right" v-bind:class="[rightOpen ? 'level-one-right--openRight': '', leftOpen ? 'level-one-right--openLeft':'', level == 2 ? 'level-one--hidden':'']">
+            <div class="level-one-right" v-bind:class="[rightOpen ? 'level-one-right--openRight': '', leftOpen ? 'level-one-right--openLeft':'', level >= 1 ? 'level-one--hidden':'']">
                 <div class="level-one-panel">
                     <div class="level-one__logo  level-one__logo--sinz">
                         <img src="/pics/logo-sinz.png">
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="level-two" v-bind:class="[level == 1 ? 'level-two--open':'', level >= 2 ? 'level-two--hidden':'']">
-            <div class="level-two-left" style="background: url(/pics/level-1.jpg)">
+            <div class="level-two-left" style="background: url(/pics/level-1.jpg) 100% 0%">
             </div>  
             <div class="level-two-right">
                 <div class="level-two-panel">
