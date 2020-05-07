@@ -642,6 +642,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function() {
@@ -662,6 +703,16 @@ __webpack_require__.r(__webpack_exports__);
         },
         openLevelTree: function() {
             this.level = 2;
+        },
+        openLevelFour: function() {
+            this.level = 3;
+        },
+        goLevel: function(level) {
+            this.level = level;
+            if ( this.level == 0 ) {
+                this.rightOpen = false;
+                this.leftOpen = false;
+            }
         },
         back: function() {
             this.level = this.level-1;
@@ -769,13 +820,39 @@ var render = function() {
         staticClass: "level-two",
         class: [
           _vm.level == 1 ? "level-two--open" : "",
-          _vm.level == 2 ? "level-two--hidden" : ""
+          _vm.level >= 2 ? "level-two--hidden" : ""
         ]
       },
       [
+        _c("div", {
+          staticClass: "level-two-left",
+          staticStyle: { background: "url(/pics/level-1.jpg)" }
+        }),
+        _vm._v(" "),
         _c("div", { staticClass: "level-two-right" }, [
           _c("div", { staticClass: "level-two-panel" }, [
             _c("div", { staticClass: "content" }, [
+              _c("div", { staticClass: "breadcrumbs" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "breadcrumbs-one",
+                    on: {
+                      click: function($event) {
+                        return _vm.goLevel(0)
+                      }
+                    }
+                  },
+                  [_vm._v("Главная")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-del" }, [_vm._v(">")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-one active" }, [
+                  _vm._v("Синарский трубный завод")
+                ])
+              ]),
+              _vm._v(" "),
               _c("h1", [_vm._v("Синарский трубный завод")]),
               _vm._v(" "),
               _c(
@@ -807,13 +884,150 @@ var render = function() {
       "div",
       {
         staticClass: "level-three",
-        class: [_vm.level == 2 ? "level-three--open" : ""]
+        class: [
+          _vm.level == 2 ? "level-three--open" : "",
+          _vm.level >= 3 ? "level-three--hidden" : ""
+        ]
       },
       [
-        _c("div", { staticClass: "level-two-right" }, [
+        _c("div", {
+          staticClass: "level-three-left",
+          staticStyle: { background: "url(/pics/level-2.jpg) 100% 0%" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "level-three-right" }, [
           _c("div", { staticClass: "level-two-panel" }, [
             _c("div", { staticClass: "content" }, [
-              _c("h1", [_vm._v("Производственные цеха предприятия")]),
+              _c("div", { staticClass: "breadcrumbs" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "breadcrumbs-one",
+                    on: {
+                      click: function($event) {
+                        return _vm.goLevel(0)
+                      }
+                    }
+                  },
+                  [_vm._v("Главная")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-del" }, [_vm._v(">")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "breadcrumbs-one",
+                    on: {
+                      click: function($event) {
+                        return _vm.goLevel(1)
+                      }
+                    }
+                  },
+                  [_vm._v("Синарский трубный завод")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-del" }, [_vm._v(">")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-one active" }, [
+                  _vm._v("Производственные цеха")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("h1", [_vm._v("Производственные цеха")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "content-block",
+                  on: { click: _vm.openLevelFour }
+                },
+                [_c("img", { attrs: { src: "/pics/blocks-tile-2.png" } })]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "content-back", on: { click: _vm.back } },
+                [
+                  _vm._v(
+                    "\n                        Назад\n                        "
+                  ),
+                  _c("div", { staticClass: "content-back--arrow" })
+                ]
+              )
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "level-four",
+        class: [_vm.level == 3 ? "level-four--open" : ""]
+      },
+      [
+        _c("div", {
+          staticClass: "level-four-left",
+          staticStyle: { background: "url(/pics/level-3.jpg) 100% 0%" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "level-four-right" }, [
+          _c("div", { staticClass: "level-two-panel" }, [
+            _c("div", { staticClass: "content" }, [
+              _c("div", { staticClass: "breadcrumbs" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "breadcrumbs-one",
+                    on: {
+                      click: function($event) {
+                        return _vm.goLevel(0)
+                      }
+                    }
+                  },
+                  [_vm._v("Главная")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-del" }, [_vm._v(">")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "breadcrumbs-one",
+                    on: {
+                      click: function($event) {
+                        return _vm.goLevel(1)
+                      }
+                    }
+                  },
+                  [_vm._v("Синарский трубный завод")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-del" }, [_vm._v(">")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "breadcrumbs-one",
+                    on: {
+                      click: function($event) {
+                        return _vm.goLevel(2)
+                      }
+                    }
+                  },
+                  [_vm._v("Производственные цеха")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-del" }, [_vm._v(">")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "breadcrumbs-one active" }, [
+                  _vm._v("Трубопрокатный цех №3 (Т-3)")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("h1", [_vm._v("Трубопрокатный цех №3 (Т-3)")]),
               _vm._v(" "),
               _vm._m(6),
               _vm._v(" "),
@@ -898,23 +1112,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "content-block" }, [
-      _c("p", [
-        _vm._v(
-          "Завод был основан в 1934 году. Сейчас предприятие выпускает все виды труб нефтяного сортамента: бурильные, обсадные, насосно-компрессорные, нефтегазопроводные, а также бесшовные горячекатаные и холоднодеформированные трубы, в том числе для котлов высокого давления, трубы из коррозионностойких марок стали и сплавов."
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Продукция завода находит применение во многих отраслях - нефтегазодобыче, энергетике, машиностроении, ЖКХ. Часть продукции в виде передельной трубной заготовки идет для обеспечения предприятий, входящих в ПАО «ТМК»."
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Качество выпускаемых труб подтверждено сертификатами АРI, Сертификатами соответствия в системе ГОСТ Р, лицензиями и разрешениями."
-        )
-      ])
+      _c("p", [_vm._v("Текст")])
     ])
   }
 ]

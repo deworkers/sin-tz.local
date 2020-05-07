@@ -40,10 +40,17 @@
                 </div>
             </div>
         </div>
-        <div class="level-two" v-bind:class="[level == 1 ? 'level-two--open':'', level == 2 ? 'level-two--hidden':'']">
+        <div class="level-two" v-bind:class="[level == 1 ? 'level-two--open':'', level >= 2 ? 'level-two--hidden':'']">
+            <div class="level-two-left" style="background: url(/pics/level-1.jpg)">
+            </div>  
             <div class="level-two-right">
                 <div class="level-two-panel">
                     <div class="content">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumbs-one" v-on:click="goLevel(0)">Главная</div>
+                            <div class="breadcrumbs-del">></div>
+                            <div class="breadcrumbs-one active">Синарский трубный завод</div>
+                        </div>
                         <h1>Синарский трубный завод</h1>
                         <div class="content-block" v-on:click="openLevelTree">
                             <img src="/pics/blocks-tile.png">
@@ -56,15 +63,49 @@
                 </div>
             </div>
         </div>
-        <div class="level-three" v-bind:class="[level == 2 ? 'level-three--open':'']">
-            <div class="level-two-right">
+        <div class="level-three" v-bind:class="[level == 2 ? 'level-three--open':'', level >= 3 ? 'level-three--hidden':'']">
+            <div class="level-three-left"  style="background: url(/pics/level-2.jpg) 100% 0%">
+            </div> 
+            <div class="level-three-right">
                 <div class="level-two-panel">
                     <div class="content">
-                        <h1>Производственные цеха предприятия</h1>
+                        <div class="breadcrumbs">
+                            <div class="breadcrumbs-one" v-on:click="goLevel(0)">Главная</div>
+                            <div class="breadcrumbs-del">></div>
+                            <div class="breadcrumbs-one" v-on:click="goLevel(1)">Синарский трубный завод</div>
+                            <div class="breadcrumbs-del">></div>
+                            <div class="breadcrumbs-one active">Производственные цеха</div>
+                        </div>
+                        <h1>Производственные цеха</h1>
+                        <div class="content-block"  v-on:click="openLevelFour">
+                            <img src="/pics/blocks-tile-2.png">
+                        </div>
+                        <div class="content-back" v-on:click="back">
+                            Назад
+                            <div class="content-back--arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="level-four" v-bind:class="[level == 3 ? 'level-four--open':'']">
+            <div class="level-four-left"  style="background: url(/pics/level-3.jpg) 100% 0%">
+            </div> 
+            <div class="level-four-right">
+                <div class="level-two-panel">
+                    <div class="content">
+                        <div class="breadcrumbs">
+                            <div class="breadcrumbs-one" v-on:click="goLevel(0)">Главная</div>
+                            <div class="breadcrumbs-del">></div>
+                            <div class="breadcrumbs-one" v-on:click="goLevel(1)">Синарский трубный завод</div>
+                            <div class="breadcrumbs-del">></div>
+                            <div class="breadcrumbs-one" v-on:click="goLevel(2)">Производственные цеха</div>
+                            <div class="breadcrumbs-del">></div>
+                            <div class="breadcrumbs-one active">Трубопрокатный цех №3 (Т-3)</div>
+                        </div>
+                        <h1>Трубопрокатный цех №3 (Т-3)</h1>
                         <div class="content-block">
-                            <p>Завод был основан в 1934 году. Сейчас предприятие выпускает все виды труб нефтяного сортамента: бурильные, обсадные, насосно-компрессорные, нефтегазопроводные, а также бесшовные горячекатаные и холоднодеформированные трубы, в том числе для котлов высокого давления, трубы из коррозионностойких марок стали и сплавов.</p>
-                            <p>Продукция завода находит применение во многих отраслях - нефтегазодобыче, энергетике, машиностроении, ЖКХ. Часть продукции в виде передельной трубной заготовки идет для обеспечения предприятий, входящих в ПАО «ТМК».</p>
-                            <p>Качество выпускаемых труб подтверждено сертификатами АРI, Сертификатами соответствия в системе ГОСТ Р, лицензиями и разрешениями.</p>
+                            <p>Текст</p>
                         </div>
                         <div class="content-back" v-on:click="back">
                             Назад
@@ -97,6 +138,16 @@
             },
             openLevelTree: function() {
                 this.level = 2;
+            },
+            openLevelFour: function() {
+                this.level = 3;
+            },
+            goLevel: function(level) {
+                this.level = level;
+                if ( this.level == 0 ) {
+                    this.rightOpen = false;
+                    this.leftOpen = false;
+                }
             },
             back: function() {
                 this.level = this.level-1;
