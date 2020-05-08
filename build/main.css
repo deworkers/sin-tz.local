@@ -155,7 +155,7 @@ body {
   width: 50%;
   position: relative;
   background: url(/pics/tmk.jpg);
-  background-size: auto;
+  background-size: cover;
   background-position: 90% 50%;
   position: absolute;
   top: 0;
@@ -163,6 +163,7 @@ body {
   height: 100vh;
   transition: width 2s ease-in-out;
   overflow: hidden;
+  z-index: 1;
 }
 .level-one-left .level-one-panel {
   right: 0;
@@ -189,11 +190,10 @@ body {
   display: none;
 }
 .level-one-right {
-  width: 50%;
+  width: 100%;
   position: relative;
   background: url(/pics/stz.jpg);
-  background-size: auto;
-  background-position: -50% 50%;
+  background-size: cover;
   position: absolute;
   top: 0;
   right: 0;
@@ -340,7 +340,7 @@ body {
   border-radius: 50px;
   position: relative;
   cursor: pointer;
-  animation: resize 8s infinite ease-in-out 8s;
+  animation: resize 6s infinite ease-in-out 6s;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
 }
 @keyframes resize {
