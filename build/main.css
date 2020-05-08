@@ -181,7 +181,7 @@ body {
   position: relative;
   background: url(/pics/stz.jpg);
   background-size: cover;
-  background-position: -50% 50%;
+  background-position: 100% 50%;
   position: absolute;
   top: 0;
   right: 0;
@@ -191,7 +191,6 @@ body {
 .level-one-right--openRight {
   right: 0%;
   width: 100%;
-  background-position: 0% 50%;
 }
 .level-one-right--openRight .level-one__more::after {
   display: none;
