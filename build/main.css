@@ -335,42 +335,104 @@ body {
   background: #f36e21;
   padding: 34px 100px 32px 40px;
   width: 315px;
+  height: 90px;
   color: #fff;
   font-size: 24px;
   border-radius: 50px;
   position: relative;
   cursor: pointer;
-  animation: resize 6s infinite ease-in-out 1s;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  /*&--alt {
+        span {
+            animation: move 6s infinite ease-in-out 3s;
+        }
+        
+        .level-one__alt {
+            animation: move2 6s infinite ease-in-out 3s;
+        }
+    }*/
 }
-@keyframes resize {
+.level-one__more span {
+  position: absolute;
+  top: 35px;
+  left: 40px;
+  display: block;
+  animation: move 5s infinite ease-in-out 1s;
+}
+.level-one__alt {
+  display: block;
+  position: absolute;
+  top: -50px;
+  left: 40px;
+  animation: move2 5s infinite ease-in-out 1s;
+}
+@keyframes move {
   from {
-    transform: scale(1);
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
-  }
-  20% {
-    transform: scale(1);
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
-  }
-  22% {
-    transform: scale(1.05);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12);
-  }
-  25% {
-    transform: scale(1);
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
-  }
-  27% {
-    transform: scale(1.05);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.12);
+    top: 35px;
+    opacity: 1;
   }
   30% {
-    transform: scale(1);
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
+    top: 35px;
+    opacity: 1;
+  }
+  35% {
+    top: 100px;
+    opacity: 1;
+  }
+  37% {
+    top: 100px;
+    opacity: 0;
+  }
+  40% {
+    top: -50px;
+    opacity: 0;
+  }
+  55% {
+    top: -50px;
+    opacity: 1;
+  }
+  65% {
+    top: 35px;
+    opacity: 1;
   }
   to {
-    transform: scale(1);
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
+    top: 35px;
+    display: block;
+  }
+}
+@keyframes move2 {
+  from {
+    top: -50px;
+    opacity: 1;
+  }
+  30% {
+    top: -50px;
+    opacity: 1;
+  }
+  45% {
+    top: 35px;
+    opacity: 1;
+  }
+  50% {
+    top: 35px;
+    opacity: 1;
+  }
+  55% {
+    top: 100px;
+    opacity: 1;
+  }
+  60% {
+    top: 100px;
+    opacity: 0;
+  }
+  65% {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: -50px;
+    opacity: 1;
   }
 }
 .level-one__more-arrow {
