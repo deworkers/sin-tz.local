@@ -2,6 +2,7 @@
     <div id="app">
         <div class="level-one">
             <div class="level-one-left" v-bind:class="[leftOpen ? 'level-one-left--openLeft':'', rightOpen ? 'level-one-left--openRight':'',  level == 2 ? 'level-one--hidden':'']">
+                <div class="level-one-img"></div>
                 <div class="level-one-panel">
                     <div class="level-one__logo level-one__logo--tmk">
                         <img src="/pics/logo-tmk.png">
@@ -21,6 +22,7 @@
                 </div>
             </div>
             <div class="level-one-right" v-bind:class="[rightOpen ? 'level-one-right--openRight': '', leftOpen ? 'level-one-right--openLeft':'', level == 2 ? 'level-one--hidden':'']">
+                <div class="level-one-img"></div>
                 <div class="level-one-panel">
                     <div class="level-one__logo  level-one__logo--sinz">
                         <img src="/pics/logo-sinz.png">

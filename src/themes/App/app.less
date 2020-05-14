@@ -16,20 +16,33 @@ body {
 
 .level-one-left {
     width: 50%;
-    position: relative;
-    background: url(/pics/tmk.jpg);
-    background-size: cover;
-    background-position: 90% 50%;
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     transition: all 2s ease-in-out;
-    &--openLeft {
+
+    .level-one-panel {
+        border-right: 1px solid #c6c6c6;
+    }
+
+    .level-one-img {
+        background: url(/pics/tmk.jpg);
+        background-size: cover;
+        position: absolute;
+        height: 500px;
         width: 100%;
+        top: 0;
+        left: 0;
+        transition: all 2s ease-in-out;
         z-index: 1;
-        .level-one-panel {
-            //right: 100%;
+    }
+
+    &--openLeft {
+        z-index: 2;
+        .level-one-img {
+            height: 100vh;
+            width: 100vw;
         }
         .level-one__more {
             &::after {
@@ -38,10 +51,6 @@ body {
         }
     }
     &--openRight {
-        left: -50%;
-        .level-one-panel {
-            //right: 100%;
-        }
         .level-one__more {
             &::after {
                 display: none;
@@ -53,20 +62,30 @@ body {
 .level-one-right {
     width: 50%;
     position: relative;
-    background: url(/pics/stz.jpg);
-    background-size: cover;
-    background-position: 100% 50%;
     position: absolute;
     top: 0;
     right: 0;
     height: 100vh;
     transition: all 2s ease-in-out;
-    &--openRight {
-        right: 0%;
+    
+    .level-one-img {
+        background: url(/pics/stz.jpg);
+        background-size: cover;
+        position: absolute;
+        height: 500px;
         width: 100%;
-        //background-position: 0% 50%;
-        .level-one-panel {
-            //right: 0%;
+        top: 0;
+        right: 0;
+        transition: all 2s ease-in-out;
+        z-index: 1;
+    }
+
+    &--openRight {
+        z-index: 2;
+        .level-one-img {
+            height: 100vh;
+            width: 100vw;
+            z-index: 2;
         }
         .level-one__more {
             &::after {
@@ -75,10 +94,6 @@ body {
         }
     }
     &--openLeft {
-        right: 50%;
-        .level-one-panel {
-            //right: 100%;
-        }
         .level-one__more {
             &::after {
                 display: none;
@@ -133,6 +148,7 @@ body {
 
 .level-two--open {
     right: 0%;
+    transition: right 2s ease-in-out 2s;
 }
 
 .level-three--open {
@@ -182,34 +198,37 @@ body {
     background: #eeeeee;
     height: 100vh;
 }
+
 .level-one-panel {
-    padding: 0px 30px;
-    width: 615px;
+    padding: 0px 50px;
+    width: 100%;
     background: #eeeeee;
-    height: 100vh;
+    height: 580px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 500px;
+    left: 0;
     transition: all 2s ease-in-out;
     overflow: hidden;
 }
 
 .level-one__logo {
-	
+    img {
+        width: 75px;
+    }
 }
 
 .level-one__logo--tmk {
-    margin: 100px 0 80px;
+    margin: 55px 0 70px;
 }
 
 .level-one__logo--sinz {
-    margin: 300px 0 40px;
+    margin: 55px 0 30px;
 }
 
 .level-one__title {
     font-size: 60px;
-    line-height: 72px;
-    margin-bottom: 90px;
+    line-height: 70px;
+    margin-bottom: 0px;
 }
 
 .level-one__more {
@@ -221,6 +240,8 @@ body {
     font-size: 24px;
     border-radius: 50px;
     position: relative;
+    position: absolute;
+    bottom: 50px;
     cursor: pointer;
     &:after {
         background: #eee;
@@ -278,7 +299,9 @@ body {
 }
 
 .level-one__qr {
-    margin-top: 40px;
+    position: absolute;
+    bottom: 50px;
+    right: 60px;
 }
 
 
