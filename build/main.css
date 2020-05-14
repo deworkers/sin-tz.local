@@ -153,10 +153,6 @@ body {
 }
 .level-one-left {
   width: 50%;
-  position: relative;
-  background: url(/pics/tmk.jpg);
-  background-size: cover;
-  background-position: 90% 50%;
   position: absolute;
   top: 0;
   left: 0;
@@ -167,33 +163,27 @@ body {
 }
 .level-one-left .level-one-panel {
   right: 0;
+  border-right: 1px solid #c6c6c6;
 }
-.level-one-left--openLeft {
+.level-one-left .level-one-img {
+  background: url(/pics/tmk-new.jpg);
+  background-size: cover;
+  position: absolute;
+  height: 500px;
   width: 100%;
+  top: 0;
+  left: 0;
+  transition: all 2s ease-in-out;
   z-index: 1;
-}
-.level-one-left--openLeft .level-one-panel {
-  right: -645px;
-  transition: right 1s ease-in-out;
 }
 .level-one-left--openLeft .level-one__more::after {
   display: none;
-}
-.level-one-left--openRight {
-  width: 0%;
-}
-.level-one-left--openRight .level-one-panel {
-  right: -645px;
-  transition: right 1s ease-in-out;
 }
 .level-one-left--openRight .level-one__more::after {
   display: none;
 }
 .level-one-right {
-  width: 100%;
-  position: relative;
-  background: url(/pics/stz.jpg);
-  background-size: cover;
+  width: 50%;
   position: absolute;
   top: 0;
   right: 0;
@@ -204,34 +194,31 @@ body {
 .level-one-right .level-one-panel {
   right: 0;
 }
-.level-one-right--openRight {
+.level-one-right .level-one-img {
+  background: url(/pics/stz.jpg);
+  background-size: cover;
+  position: absolute;
+  height: 500px;
   width: 100%;
-  background-position: 0% 50%;
-}
-.level-one-right--openRight .level-one-panel {
-  right: -645px;
-  transition: right 1s ease-in-out;
+  top: 0;
+  right: 0;
+  transition: all 2s ease-in-out;
+  z-index: 1;
 }
 .level-one-right--openRight .level-one__more::after {
   display: none;
-}
-.level-one-right--openLeft {
-  width: 0;
-}
-.level-one-right--openLeft .level-one-panel {
-  right: -645px;
-  transition: right 1s ease-in-out;
 }
 .level-one-right--openLeft .level-one__more::after {
   display: none;
 }
 .level-one-panel {
-  padding: 0px 30px;
-  width: 615px;
+  padding: 0px 50px;
+  width: 100%;
   background: #eeeeee;
-  height: 100vh;
+  height: 580px;
   position: absolute;
-  top: 0;
+  top: 500px;
+  left: 0;
   transition: right 1s ease-in-out 1s;
   transition: left 1s ease-in-out 1s;
   overflow: hidden;
@@ -278,7 +265,7 @@ body {
 }
 .level-two--open {
   width: 100%;
-  transition: width 2s ease-in-out 1.5s;
+  transition: width 2s ease-in-out;
 }
 .level-three--open {
   width: 100%;
@@ -319,16 +306,19 @@ body {
   background: #eeeeee;
   height: 100vh;
 }
+.level-one__logo img {
+  width: 75px;
+}
 .level-one__logo--tmk {
-  margin: 100px 0 80px;
+  margin: 55px 0 70px;
 }
 .level-one__logo--sinz {
-  margin: 300px 0 40px;
+  margin: 55px 0 30px;
 }
 .level-one__title {
   font-size: 60px;
-  line-height: 72px;
-  margin-bottom: 90px;
+  line-height: 70px;
+  margin-bottom: 0px;
 }
 .level-one__more {
   font-family: 'Europe';
@@ -338,7 +328,8 @@ body {
   color: #fff;
   font-size: 24px;
   border-radius: 50px;
-  position: relative;
+  position: absolute;
+  bottom: 50px;
   cursor: pointer;
   animation: resize 6s infinite ease-in-out 1s;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.12);
@@ -393,7 +384,9 @@ body {
   left: 21px;
 }
 .level-one__qr {
-  margin-top: 40px;
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
 }
 .content {
   display: flex;

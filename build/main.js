@@ -683,6 +683,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function() {
@@ -760,6 +762,8 @@ var render = function() {
           ]
         },
         [
+          _c("div", { staticClass: "level-one-img" }),
+          _vm._v(" "),
           _c("div", { staticClass: "level-one-panel" }, [
             _vm._m(0),
             _vm._v(" "),
@@ -792,6 +796,8 @@ var render = function() {
           ]
         },
         [
+          _c("div", { staticClass: "level-one-img" }),
+          _vm._v(" "),
           _c("div", { staticClass: "level-one-panel" }, [
             _vm._m(3),
             _vm._v(" "),
