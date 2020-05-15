@@ -685,6 +685,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function() {
@@ -773,9 +775,12 @@ var render = function() {
               "div",
               { staticClass: "level-one__more", on: { click: _vm.openLeft } },
               [
-                _vm._v(
-                  "\n                    Узнать больше\n                    "
-                ),
+                _c("span", [_vm._v("Узнать больше")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "level-one__alt" }, [
+                  _vm._v("Нажмите")
+                ]),
+                _vm._v(" "),
                 _c("div", { staticClass: "level-one__more-arrow" })
               ]
             ),
@@ -807,9 +812,12 @@ var render = function() {
               "div",
               { staticClass: "level-one__more", on: { click: _vm.openRight } },
               [
-                _vm._v(
-                  "\n                    Узнать больше\n                    "
-                ),
+                _c("span", [_vm._v("Узнать больше")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "level-one__alt" }, [
+                  _vm._v("Нажмите")
+                ]),
+                _vm._v(" "),
                 _c("div", { staticClass: "level-one__more-arrow" })
               ]
             ),

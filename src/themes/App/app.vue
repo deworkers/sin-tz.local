@@ -13,7 +13,8 @@
                         компания
                     </div>
                     <div class="level-one__more" v-on:click="openLeft">
-                        Узнать больше
+                        <span>Узнать больше</span>
+                        <div class="level-one__alt">Нажмите</div>
                         <div class="level-one__more-arrow"></div>
                     </div>
                     <div class="level-one__qr">
@@ -33,7 +34,8 @@
                         завод
                     </div>
                     <div class="level-one__more"  v-on:click="openRight">
-                        Узнать больше
+                        <span>Узнать больше</span>
+                        <div class="level-one__alt">Нажмите</div>
                         <div class="level-one__more-arrow"></div>
                     </div>
                     <div class="level-one__qr">
