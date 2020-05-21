@@ -1,0 +1,27 @@
+{
+    "title": "Производственные цеха предприятия",
+    "backgroundImage": "/pics/level-2.jpg",
+    "catalogList" : [
+        {
+            "title": "Цех по отделке труб нефтяного сортамента (Т-1)",
+            "link": "json/level4.json"
+        },
+        {
+            "title": "Трубопрокатный цех №2 (Т-2)",
+            "link": "json/level4.json"
+        },
+        {
+            "title": "Трубопрокатный цех №3 (Т-3)",
+            "link": "json/level4.json"
+        },
+        {
+            "title": "Цех по производству труб нефтяного сортамента (Т-4)",
+            "link": "json/level4.json"
+        },
+        {
+            "title": "Трубоволочильный цех №2 (В-2)",
+            "link": "json/level4.json"
+        }
+    ]
+
+}

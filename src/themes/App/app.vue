@@ -42,86 +42,35 @@
                 </div>
             </div>
         </div>
-        <div class="level-two" v-bind:class="[level == 1 ? 'level-two--open':'', level >= 2 ? 'level-two--hidden':'']">
-            <div class="level-two-left" style="background: url(/pics/level-1.jpg)">
-            </div>  
-            <div class="level-two-right">
-                <div class="level-two-panel">
-                    <div class="content">
-                        <div class="breadcrumbs">
-                            <div class="breadcrumbs-one" v-on:click="goLevel(0)">Главная</div>
-                            <div class="breadcrumbs-del">></div>
-                            <div class="breadcrumbs-one active">Синарский трубный завод</div>
-                        </div>
-                        <h1>Синарский трубный завод</h1>
-                        <div class="content-block" v-on:click="openLevelTree">
-                            <img src="/pics/blocks-tile.png">
-                        </div>
-                        <div class="content-back" v-on:click="back">
-                            Назад
-                            <div class="content-back--arrow"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="level-three" v-bind:class="[level == 2 ? 'level-three--open':'', level >= 3 ? 'level-three--hidden':'']">
-            <div class="level-three-left"  style="background: url(/pics/level-2.jpg) 100% 0%">
-            </div> 
-            <div class="level-three-right">
-                <div class="level-two-panel">
-                    <div class="content">
-                        <div class="breadcrumbs">
-                            <div class="breadcrumbs-one" v-on:click="goLevel(0)">Главная</div>
-                            <div class="breadcrumbs-del">></div>
-                            <div class="breadcrumbs-one" v-on:click="goLevel(1)">Синарский трубный завод</div>
-                            <div class="breadcrumbs-del">></div>
-                            <div class="breadcrumbs-one active">Производственные цеха</div>
-                        </div>
-                        <h1>Производственные цеха</h1>
-                        <div class="content-block"  v-on:click="openLevelFour">
-                            <img src="/pics/blocks-tile-2.png">
-                        </div>
-                        <div class="content-back" v-on:click="back">
-                            Назад
-                            <div class="content-back--arrow"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="level-four" v-bind:class="[level == 3 ? 'level-four--open':'']">
-            <div class="level-four-left"  style="background: url(/pics/level-3.jpg) 100% 0%">
-            </div> 
-            <div class="level-four-right">
-                <div class="level-two-panel">
-                    <div class="content">
-                        <div class="breadcrumbs">
-                            <div class="breadcrumbs-one" v-on:click="goLevel(0)">Главная</div>
-                            <div class="breadcrumbs-del">></div>
-                            <div class="breadcrumbs-one" v-on:click="goLevel(1)">Синарский трубный завод</div>
-                            <div class="breadcrumbs-del">></div>
-                            <div class="breadcrumbs-one" v-on:click="goLevel(2)">Производственные цеха</div>
-                            <div class="breadcrumbs-del">></div>
-                            <div class="breadcrumbs-one active">Трубопрокатный цех №3 (Т-3)</div>
-                        </div>
-                        <h1>Трубопрокатный цех №3 (Т-3)</h1>
-                        <div class="content-block">
-                            <p>Текст</p>
-                        </div>
-                        <div class="content-back" v-on:click="back">
-                            Назад
-                            <div class="content-back--arrow"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <levelTwo 
+            :class="[level == 1 ? 'level-two--open':'', level >= 2 ? 'level-two--hidden':'']"
+            :goLevel="goLevel"
+            :back="back"
+        ></levelTwo>
+        <levelThree
+            :class="[level == 2 ? 'level-three--open':'', level >= 3 ? 'level-three--hidden':'']"
+            :goLevel="goLevel"
+            :back="back"
+        ></levelThree>
+        <levelFour
+            :class="[level == 3 ? 'level-four--open':'']"
+            :goLevel="goLevel"
+            :back="back"
+        ></levelFour>
     </div>
 </template>
 
 <script>
+    import levelTwo   from "./components/level-two.vue";
+    import levelThree from "./components/level-three.vue";
+    import levelFour  from "./components/level-four.vue";
+
     export default {
+        components: {
+            levelTwo, 
+            levelThree, 
+            levelFour
+        },
         data: function() {
             return {
                 level: 0,
@@ -129,14 +78,35 @@
                 leftOpen: false
             }
         },
+        computed: {
+            content: function () {
+                return this.$store.state.content;
+            },
+        },
         methods: {
             openRight: function() {
-                this.rightOpen = true;
-                this.level = 1;
+                var self = this;
+                this.$store.dispatch('getContent', {
+                    link: 'json/level2.json',
+                    level: 'level2'
+                }).then(function() {
+                    self.rightOpen = true;
+                    setTimeout(() => {
+                        self.level = 1;
+                    }, 2000);
+                });
             },
             openLeft:  function() {
-                this.leftOpen = true;
-                this.level = 1;
+                var self = this;
+                this.$store.dispatch('getContent', {
+                    link: 'json/level2.json',
+                    level: 'level2'
+                }).then(function() {
+                    self.leftOpen = true;
+                    setTimeout(() => {
+                        self.level = 1;
+                    }, 2000);
+                });
             },
             openLevelTree: function() {
                 this.level = 2;

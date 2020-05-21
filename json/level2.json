@@ -1,0 +1,43 @@
+{
+    "title": "Синарский трубный завод",
+    "backgroundImage": "/pics/level-1.jpg",
+    "catalogList" : [
+        {
+            "title": "Интерактивная карта ПАО «СинТЗ»",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "Производственные цеха предприятия",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "История ПАО «СинТЗ»",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "Руководители предприятия",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "Социальные пакет",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "Массовые профессии",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "Молодёжная политика",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "Вакансии",
+            "link": "json/level3.json"
+        },
+        {
+            "title": "Трудоустройство",
+            "link": "json/level3.json"
+        }
+    ]
+
+}
